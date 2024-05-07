@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            margin-top: 100px;
+            position: relative;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            position: relative;
+        }
+
+        div:not(:last-child) {
+            position: relative;
+        }
+
+        button {
+            display: none;
+        }
+
+        div>p {
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 10px;
+            font-size: 30px;
+        }
+
+        div>img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div id="1">
+        <img src="assets/man.gif" >
+        <p>A</p>
+    </div>
+    <div id="2">
+        <img src="assets/man.gif" >
+        <p>B</p>
+    </div>
+    <div id="3">
+        <img src="assets/man.gif" >
+        <p>C</p>
+    </div>
+    <div id="4">
+        <img src="assets/man.gif" >
+        <p>D</p>
+    </div>
+    <div id="5">
+        <img src="assets/man.gif" >
+        <p>E</p>
+    </div>
+    <div id="6">
+        <img src="assets/man.gif" >
+        <p>F</p>
+    </div>
+    <div>
+        <img src="assets/time.gif">
+    </div>
+</section>
+
+<script src="assets/lib/jquery-3.7.1.min.js"></script>
+<script>
+    var letters = ["A", "B", "C", "D", "E", "F"];
+
+    function replace() {
+        let lastValue = letters.pop();
+        letters.unshift(lastValue);
+
+        $("#1 p").text(letters[0]);
+        $("#2 p").text(letters[1]);
+        $("#3 p").text(letters[2]);
+        $("#4 p").text(letters[3]);
+        $("#5 p").text(letters[4]);
+        $("#6 p").text(letters[5]);
+    }
+
+    setInterval(replace, 1000);
+</script>
+</body>
+</html>
