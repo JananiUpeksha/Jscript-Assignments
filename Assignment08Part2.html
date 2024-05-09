@@ -30,7 +30,7 @@
             height: 50px;
             width: 150px;
             border: 1px solid black;
-            margin-top: 100px; /* Reduced margin */
+            margin-top: 100px;
             margin-left: 10px;
         }
 
@@ -108,9 +108,10 @@
         $(".light").removeClass("lightOn5");
         $(".light").removeClass("lightOn6");
 
-        $(".light").eq(current_light).addClass("lightOn");
+        $(".light").eq(current_light).addClass("lightOn");//mulma element eka alln ekata thama rathu add krnne
 
         if (move === "RIGHT") {
+            //methna mulma eka - awe pink add kle red wlta klin nisa red wlta passe add wenwa nm ++ dagena ynna pluwn
             if (current_light !== 0) $(".light").eq(current_light - 1).addClass("lightOn2"); //if eka dmme naththn anthima ekedi aulk enwa
             if (current_light !== 0) $(".light").eq(current_light + 1).addClass("lightOn3");
             if (current_light !== 0) $(".light").eq(current_light + 2).addClass("lightOn4");
@@ -122,7 +123,7 @@
                 move = "LEFT";
             }
         } else {
-            $(".light").eq(current_light + 1).addClass("lightOn2");
+            $(".light").eq(current_light + 1).addClass("lightOn2");//anith paththta yaddi pink mulin ena nisa + anith ewa passe ena nisa -
             $(".light").eq(current_light - 1).addClass("lightOn3");
             $(".light").eq(current_light - 2).addClass("lightOn4");
             $(".light").eq(current_light - 3).addClass("lightOn5");
